@@ -44,8 +44,10 @@ import Base from '../layouts/Base.astro';
       </div>
     </div>
 
-    <!-- Dégradé cobalt -->
+    <!-- Dégradé cobalt (vertical) -->
     <div class="absolute inset-0 z-20 bg-gradient-to-b from-cobalt/80 via-cobalt/40 to-transparent"></div>
+    <!-- Dégradé cobalt (horizontal, pour lisibilité du texte gauche) -->
+    <div class="absolute inset-0 z-20 bg-gradient-to-r from-cobalt/85 via-cobalt/30 to-transparent md:via-cobalt/20"></div>
 
     <!-- Texte hero -->
     <div class="absolute z-30 top-1/2 -translate-y-[45%] left-[5vw] md:left-20 flex flex-col items-start w-full max-w-xl">
@@ -55,14 +57,15 @@ import Base from '../layouts/Base.astro';
       </span>
 
       <h1
-        class="text-white text-[4rem] md:text-[5.5rem] leading-[0.92] tracking-tight font-normal drop-shadow-lg flex flex-col font-script animate-fade-up-2"
+        class="text-white text-[4rem] md:text-[5.5rem] leading-[0.92] tracking-tight font-normal flex flex-col font-script animate-fade-up-2"
+        style="text-shadow: 0 2px 24px rgba(10,20,50,0.6)"
       >
         <span>L'essentiel</span>
         <span>du goût,</span>
         <span>de l'âme.</span>
       </h1>
 
-      <p class="text-white/70 text-base md:text-lg mt-8 max-w-md leading-relaxed font-light animate-fade-up-3">
+      <p class="text-white text-base md:text-lg mt-8 max-w-md leading-relaxed font-normal animate-fade-up-3" style="text-shadow: 0 1px 12px rgba(10,20,50,0.55)">
         Une cuisine de marché exigeante et conviviale, au cœur du boulevard de la Prairie au Duc.
       </p>
 
@@ -273,7 +276,7 @@ import Base from '../layouts/Base.astro';
     </div>
 
     <!-- Contenu -->
-    <div class="w-full md:w-1/2 bg-cobalt noise-overlay p-10 md:p-20 relative">
+    <div class="w-full md:w-1/2 p-10 md:p-20 relative" style="background-color:#1F3464">
       <div class="relative z-10 max-w-lg">
 
         <span class="label-tag mb-4 block">Groupes & Événements</span>
@@ -312,65 +315,6 @@ import Base from '../layouts/Base.astro';
 
 
   <!-- ══════════════════════════════════════════
-       6. INFOS PRATIQUES
-  ══════════════════════════════════════════ -->
-  <section class="py-24 bg-surface border-t border-cobalt/5">
-    <div class="max-w-[80rem] mx-auto px-8">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-
-        <!-- Horaires -->
-        <div class="border-t-2 border-cobalt/10 pt-8">
-          <div class="flex items-center gap-3 mb-6">
-            <iconify-icon icon="solar:clock-circle-linear" width="22" class="text-cobalt"></iconify-icon>
-            <span class="text-cobalt text-xs uppercase tracking-[3px] font-semibold font-sans">Horaires</span>
-          </div>
-          <div class="text-cobalt/70 text-sm font-light leading-relaxed space-y-2">
-            <p><strong class="text-cobalt font-medium">Déjeuner</strong> — 12h00 à 14h30</p>
-            <p><strong class="text-cobalt font-medium">Dîner</strong> — 19h00 à 22h30</p>
-            <p class="mt-4 text-cobalt/50">Du mardi au samedi<br />Fermé dimanche et lundi</p>
-          </div>
-        </div>
-
-        <!-- Accès -->
-        <div class="border-t-2 border-cobalt/10 pt-8">
-          <div class="flex items-center gap-3 mb-6">
-            <iconify-icon icon="solar:map-point-linear" width="22" class="text-cobalt"></iconify-icon>
-            <span class="text-cobalt text-xs uppercase tracking-[3px] font-semibold font-sans">Accès</span>
-          </div>
-          <address class="not-italic text-cobalt/70 text-sm font-light leading-relaxed">
-            <p class="text-cobalt font-medium not-italic">28 bd de la Prairie au Duc</p>
-            <p>44200 Nantes</p>
-            <p class="mt-3 text-cobalt/50">🚋 Tram ligne 1<br />Arrêt Chantiers Navals</p>
-            <p class="mt-2 text-cobalt/50">🅿️ Parking Prairie au Duc</p>
-          </address>
-        </div>
-
-        <!-- Contact & Réservation -->
-        <div class="border-t-2 border-cobalt/10 pt-8">
-          <div class="flex items-center gap-3 mb-6">
-            <iconify-icon icon="solar:phone-linear" width="22" class="text-cobalt"></iconify-icon>
-            <span class="text-cobalt text-xs uppercase tracking-[3px] font-semibold font-sans">Contact</span>
-          </div>
-          <div class="text-cobalt/70 text-sm font-light space-y-3 mb-8">
-            <p>
-              <a href="tel:+33688672921" class="hover:text-cobalt transition-colors">06 88 67 29 21</a>
-            </p>
-            <p>
-              <a href="mailto:contact@quelys-nantes.fr" class="hover:text-cobalt transition-colors">contact@quelys-nantes.fr</a>
-            </p>
-          </div>
-          <!-- Remplacer href par URL Zenchef/TheFork -->
-          <a href="https://www.zenchef.com/quelys-nantes" target="_blank" rel="noopener" class="btn-outline">
-            Réserver en ligne
-          </a>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ══════════════════════════════════════════
        7. GALERIE INSTAGRAM
   ══════════════════════════════════════════ -->
   <section class="py-32 bg-white">
@@ -396,7 +340,7 @@ import Base from '../layouts/Base.astro';
           { src: '/images/insta-3-img.webp', caption: 'Ambiance du soir'         },
           { src: '/images/insta-4-img.webp', caption: 'Notre sélection nature'   },
           { src: '/images/insta-5-img.webp', caption: 'Retour de marché'         },
-          { src: '/images/insta-5-img.webp', caption: 'Précision'                },
+          { src: '/images/insta-6-img.webp', caption: 'Précision'                },
         ].map(({ src, caption }) => (
           <div class="aspect-square relative group overflow-hidden bg-sky/20">
             <img
@@ -426,5 +370,17 @@ import Base from '../layouts/Base.astro';
 
     </div>
   </section>
+
+  <!-- Neutralisation des liens internes (présentation page d'accueil seule) -->
+  <script is:inline>
+    document.querySelectorAll('a[href]').forEach((a) => {
+      const href = a.getAttribute('href') || '';
+      const isInternal =
+        href.startsWith('/') &&
+        !href.startsWith('//') &&
+        !href.startsWith('/#');
+      if (isInternal) a.setAttribute('href', '#');
+    });
+  </script>
 
 </Base>

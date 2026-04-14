@@ -62,16 +62,14 @@ const {
        NAVIGATION
   ══════════════════════════════════════════════ -->
   <nav class="nav-glass fixed top-0 w-full z-50 transition-all duration-300">
-    <div class="max-w-[90rem] mx-auto px-8 h-[5.5rem] flex items-center justify-between">
+    <div class="max-w-[90rem] mx-auto px-8 h-24 flex items-center justify-between">
 
       <!-- Logo -->
-      <a href="/" class="flex items-center h-full py-2">
+      <a href="/" class="flex items-center h-full py-1 shrink-0">
         <img
           src="/images/logo-quelys.png"
           alt="Quélys — Cuisine bistronomique"
-          class="h-14 w-auto"
-          width="160"
-          height="56"
+          class="h-16 md:h-20 w-auto max-w-none shrink-0 object-contain"
         />
       </a>
 
@@ -94,15 +92,11 @@ const {
         ))}
       </div>
 
-      <!-- Droite : langue + CTA -->
+      <!-- Droite : CTA -->
       <div class="flex items-center gap-6">
-        <div class="hidden md:flex items-center gap-2 text-white/50 text-xs font-sans">
-          <span class="text-white">FR</span>
-          <span>|</span>
-          <span class="hover:text-white cursor-pointer transition-colors duration-300">EN</span>
-        </div>
-        <a href="/contact" class="btn-primary hidden md:inline-flex">
-          Réserver une table
+        <a href="/contact" class="btn-primary hidden md:inline-flex" aria-label="Réserver une table" title="Réserver une table">
+          <iconify-icon icon="solar:bookmark-linear" width="20" class="lg:hidden"></iconify-icon>
+          <span class="hidden lg:inline">Réserver une table</span>
         </a>
         <!-- Burger mobile -->
         <button
@@ -156,9 +150,9 @@ const {
           <img
             src="/images/logo-quelys.png"
             alt="Quélys"
-            class="h-12 w-auto mb-4 brightness-0 invert"
-            width="140"
-            height="48"
+            class="h-16 w-auto mb-4"
+            width="200"
+            height="64"
           />
           <p class="text-white/60 text-sm font-light mb-5 leading-relaxed">
             28 boulevard de la Prairie au Duc,<br />44200 Nantes
