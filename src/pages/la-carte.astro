@@ -51,7 +51,9 @@ import Base from '../layouts/Base.astro';
           },
         ].map(({ tag, name, price, desc, items, note }) => (
           <div class="bg-surface rounded overflow-hidden flex flex-col group shadow-[0_8px_40px_rgba(31,52,100,0.08)] transition-transform duration-300 hover:-translate-y-1">
-            <div class="h-20 bg-sky noise-paprika"></div>
+            <div class="h-16 bg-sky noise-paprika flex items-center justify-center">
+              <img src="/images/monogramme.svg" alt="" aria-hidden="true" class="h-[3.75rem] w-auto relative z-10 brightness-0 invert" />
+            </div>
             <div class="p-8 flex flex-col flex-grow items-center text-center">
               <span class="text-cobalt text-[11px] uppercase tracking-widest mb-3 font-semibold font-sans">{tag}</span>
               <h3 class="text-cobalt text-[2.5rem] leading-none mb-4 font-script">{name}</h3>
