@@ -45,7 +45,7 @@ import Base from '../layouts/Base.astro';
           },
           {
             tag: 'Menu Dégustation', name: 'Gastronomique', price: '68 €',
-            desc: 'Menu en 5 temps, à l\'aveugle',
+            desc: `Menu en 5 temps, à l'aveugle`,
             items: ['Amuse-bouches du moment', '2 entrées / 1 plat / 1 pré-dessert', 'Dessert signature & mignardises'],
             note: 'Accord mets & vins : + 35 €',
           },
@@ -79,7 +79,7 @@ import Base from '../layouts/Base.astro';
             {[
               ['Ceviche de daurade, lait de coco', '18 €'],
               ['Foie gras de canard, brioche maison', '22 €'],
-              ['Velouté de topinambours, truffe d\'été', '16 €'],
+              [`Velouté de topinambours, truffe d'été`, '16 €'],
               ['Tataki de thon rouge, ponzu', '20 €'],
             ].map(([dish, price]) => (
               <div class="flex justify-between items-baseline py-3 border-b border-cobalt/5 last:border-0">
@@ -92,7 +92,7 @@ import Base from '../layouts/Base.astro';
             <h3 class="text-cobalt text-xs uppercase tracking-widest mb-6 font-semibold font-sans pb-2 border-b border-cobalt/10">Plats</h3>
             {[
               ['Sole meunière, citron confit', '34 €'],
-              ['Carré d\'agneau, jus réduit', '38 €'],
+              [`Carré d'agneau, jus réduit`, '38 €'],
               ['Risotto de langoustines', '32 €'],
               ['Légumes de saison, œuf mollet', '26 €'],
             ].map(([dish, price]) => (
