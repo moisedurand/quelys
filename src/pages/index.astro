@@ -17,7 +17,7 @@ import Base from '../layouts/Base.astro';
       <!-- Gauche : salle -->
       <div class="w-[34%] h-full">
         <img
-          src="/images/hero-salle.jpg"
+          src="/images/hero-salle.webp"
           alt="Salle du restaurant Quélys"
           class="w-full h-full object-cover"
           loading="eager"
@@ -27,7 +27,7 @@ import Base from '../layouts/Base.astro';
       <div class="w-[34%] absolute left-[33%] z-10 shadow-[0_0_3rem_rgba(0,0,0,0.5)]"
            style="height: calc(100% + 3.75rem); top: -1.875rem;">
         <img
-          src="/images/hero-plat.jpg"
+          src="/images/hero-plat.webp"
           alt="Plat dressé par le chef"
           class="w-full h-full object-cover"
           loading="eager"
@@ -36,7 +36,7 @@ import Base from '../layouts/Base.astro';
       <!-- Droite : ambiance -->
       <div class="w-[34%] h-full absolute right-0 top-0">
         <img
-          src="/images/hero-ambiance.jpg"
+          src="/images/hero-ambiance.webp"
           alt="Ambiance conviviale au restaurant"
           class="w-full h-full object-cover"
           loading="eager"
@@ -129,7 +129,7 @@ import Base from '../layouts/Base.astro';
       <!-- Photo chef -->
       <div class="w-full relative">
         <img
-          src="/images/chef-plat.jpg"
+          src="/images/chef-plat.webp"
           alt="Mains du chef Anthony Lusson dressant un plat"
           class="w-full aspect-square object-cover rounded shadow-[0_20px_60px_rgba(221,156,122,0.3)] -rotate-1 transition-transform duration-700 hover:rotate-0"
           loading="lazy"
@@ -265,7 +265,7 @@ import Base from '../layouts/Base.astro';
     <!-- Photo salle privatisée -->
     <div class="w-full md:w-1/2 h-96 md:h-auto relative">
       <img
-        src="/images/evenements-salle.jpg"
+        src="/images/evenements-salle.webp"
         alt="Salle privatisée pour événements au restaurant Quélys"
         class="absolute inset-0 w-full h-full object-cover"
         loading="lazy"
@@ -391,12 +391,12 @@ import Base from '../layouts/Base.astro';
       <!-- Grille 3×2 -->
       <div class="grid grid-cols-2 md:grid-cols-3 gap-0 max-w-[60rem] mx-auto">
         {[
-          { src: '/images/insta-1.jpg', caption: 'Nouveau plat à la carte'  },
-          { src: '/images/insta-2.jpg', caption: 'Coulisses du service'     },
-          { src: '/images/insta-3.jpg', caption: 'Ambiance du soir'         },
-          { src: '/images/insta-4.jpg', caption: 'Notre sélection nature'   },
-          { src: '/images/insta-5.jpg', caption: 'Retour de marché'         },
-          { src: '/images/insta-6.jpg', caption: 'Précision'                },
+          { src: '/images/insta-1-img.webp', caption: 'Nouveau plat à la carte'  },
+          { src: '/images/insta-2-img.webp', caption: 'Coulisses du service'     },
+          { src: '/images/insta-3-img.webp', caption: 'Ambiance du soir'         },
+          { src: '/images/insta-4-img.webp', caption: 'Notre sélection nature'   },
+          { src: '/images/insta-5-img.webp', caption: 'Retour de marché'         },
+          { src: '/images/insta-5-img.webp', caption: 'Précision'                },
         ].map(({ src, caption }) => (
           <div class="aspect-square relative group overflow-hidden bg-sky/20">
             <img
