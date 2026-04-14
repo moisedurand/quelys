@@ -1,0 +1,84 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base
+  title="Événements & Privatisation — Quélys Nantes"
+  description="Privatisez Quélys pour vos événements : séminaires, déjeuners d'affaires, anniversaires, dîners de groupe. Jusqu'à 60 couverts, 28 bd de la Prairie au Duc, Nantes."
+>
+
+  <!-- Header -->
+  <div class="pt-40 pb-20 bg-cobalt noise-overlay">
+    <div class="max-w-[80rem] mx-auto px-8">
+      <span class="label-tag mb-4 block">Groupes & Événements</span>
+      <h1 class="text-white text-[3.5rem] md:text-[5rem] leading-[1.0] font-script">
+        Votre événement, notre scène
+      </h1>
+      <p class="text-white/60 text-base font-light mt-4 max-w-xl">
+        Salle privatisable jusqu'à 60 couverts, au cœur de la Prairie au Duc.
+      </p>
+    </div>
+  </div>
+
+  <!-- Types d'événements -->
+  <section class="py-24 bg-white">
+    <div class="max-w-[80rem] mx-auto px-8">
+
+      <div class="text-center mb-16">
+        <span class="label-tag mb-4 block">Ce que nous organisons</span>
+        <h2 class="text-cobalt text-[3rem] font-script">Des moments sur mesure</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {[
+          {
+            icon: 'solar:case-linear',
+            title: 'Déjeuners & dîners d\'affaires',
+            desc: 'Impressionnez vos clients dans un cadre élégant. Menus dédiés, service attentionné, confidentialité garantie. Facturation entreprise disponible.',
+          },
+          {
+            icon: 'solar:buildings-linear',
+            title: 'Séminaires & teambuilding',
+            desc: 'Combinez une journée de travail avec un repas d\'exception. Pause déjeuner ou dîner de clôture, nous construisons le programme avec vous.',
+          },
+          {
+            icon: 'solar:confetti-linear',
+            title: 'Anniversaires & célébrations',
+            desc: 'De l\'anniversaire intime au grand repas de famille. Personnalisation du menu, accueil sur mesure, ambiance à votre image.',
+          },
+          {
+            icon: 'solar:glass-water-linear',
+            title: 'Cocktails & réceptions',
+            desc: 'Formule cocktail dînatoire jusqu'à 80 personnes. Mise en place d\'un bar à vins nature, buffets chaleureux et raffinés.',
+          },
+        ].map(({ icon, title, desc }) => (
+          <div class="flex items-start gap-6 p-8 bg-surface rounded border-l-4 border-apricot/40 hover:border-apricot transition-colors duration-300">
+            <iconify-icon icon={icon} width="32" class="text-apricot shrink-0 mt-1" stroke-width="1.5"></iconify-icon>
+            <div>
+              <h3 class="text-cobalt font-semibold text-lg mb-2 font-sans">{title}</h3>
+              <p class="text-cobalt/60 text-sm font-light leading-relaxed">{desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA demande de devis -->
+  <section class="py-24 bg-cobalt noise-overlay">
+    <div class="max-w-2xl mx-auto px-8 text-center">
+      <span class="label-tag mb-4 block">Parlons de votre projet</span>
+      <h2 class="text-white text-[3rem] font-script mb-6">
+        Demandez votre devis personnalisé
+      </h2>
+      <p class="text-white/60 text-base font-light mb-10">
+        Réponse sous 24h. Nous construisons une proposition adaptée à votre budget,
+        vos contraintes et vos envies.
+      </p>
+      <a href="/contact#evenements" class="btn-primary">
+        Envoyer une demande
+      </a>
+    </div>
+  </section>
+
+</Base>

@@ -1,0 +1,177 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base
+  title="Contact & Accès — Quélys Nantes"
+  description="Contactez le restaurant Quélys à Nantes. Réservation, demande de groupe ou événement. 28 boulevard de la Prairie au Duc, 44200 Nantes. Tél : 06 88 67 29 21."
+>
+
+  <!-- Header -->
+  <div class="pt-40 pb-20 bg-cobalt noise-overlay">
+    <div class="max-w-[80rem] mx-auto px-8">
+      <span class="label-tag mb-4 block">Nous trouver</span>
+      <h1 class="text-white text-[3.5rem] md:text-[5rem] leading-[1.0] font-script">
+        Venez nous rendre visite
+      </h1>
+    </div>
+  </div>
+
+  <!-- Grid contact + formulaire -->
+  <section class="py-24 bg-white">
+    <div class="max-w-[80rem] mx-auto px-8 grid grid-cols-1 md:grid-cols-2 gap-20">
+
+      <!-- Informations -->
+      <div class="flex flex-col gap-10">
+
+        <div>
+          <h2 class="text-cobalt text-[2rem] font-script mb-6">Informations pratiques</h2>
+
+          <div class="flex flex-col gap-5 text-sm font-light text-cobalt/70">
+            <div class="flex items-start gap-4">
+              <iconify-icon icon="solar:map-point-linear" width="20" class="text-apricot mt-0.5 shrink-0" stroke-width="1.5"></iconify-icon>
+              <div>
+                <p class="font-medium text-cobalt mb-1">Adresse</p>
+                <p>28 boulevard de la Prairie au Duc<br />44200 Nantes</p>
+                <p class="mt-1 text-cobalt/50">Tram ligne 1 — Chantiers Navals</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <iconify-icon icon="solar:phone-linear" width="20" class="text-apricot mt-0.5 shrink-0" stroke-width="1.5"></iconify-icon>
+              <div>
+                <p class="font-medium text-cobalt mb-1">Téléphone</p>
+                <a href="tel:+33688672921" class="hover:text-cobalt transition-colors">06 88 67 29 21</a>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <iconify-icon icon="solar:letter-linear" width="20" class="text-apricot mt-0.5 shrink-0" stroke-width="1.5"></iconify-icon>
+              <div>
+                <p class="font-medium text-cobalt mb-1">Email</p>
+                <a href="mailto:contact@quelys-nantes.fr" class="hover:text-cobalt transition-colors">contact@quelys-nantes.fr</a>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <iconify-icon icon="solar:clock-circle-linear" width="20" class="text-apricot mt-0.5 shrink-0" stroke-width="1.5"></iconify-icon>
+              <div>
+                <p class="font-medium text-cobalt mb-1">Horaires</p>
+                <p>Mardi – Samedi : 12h–14h30 / 19h–22h30</p>
+                <p class="text-cobalt/50">Fermé dimanche et lundi</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA Réservation directe -->
+        <div class="bg-surface rounded p-8 border-l-4 border-apricot">
+          <h3 class="text-cobalt font-semibold text-lg mb-2 font-sans">Réserver une table</h3>
+          <p class="text-cobalt/60 text-sm font-light mb-5">
+            Réservation immédiate en ligne via notre partenaire de réservation.
+          </p>
+          <!-- Remplacer href par URL Zenchef / TheFork réelle -->
+          <a href="https://www.zenchef.com/quelys-nantes" target="_blank" rel="noopener" class="btn-primary">
+            Réserver maintenant
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Formulaire de contact -->
+      <div id="evenements">
+        <h2 class="text-cobalt text-[2rem] font-script mb-8">Nous écrire</h2>
+
+        <!--
+          FORMULAIRE BREVO
+          Remplacer l'action par : action="https://app.brevo.com/form/VOTRE_ID_FORMULAIRE"
+        -->
+        <form
+          method="POST"
+          action="https://app.brevo.com/form/VOTRE_ID_FORMULAIRE"
+          class="flex flex-col gap-6"
+        >
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="flex flex-col gap-2">
+              <label class="text-cobalt text-xs uppercase tracking-widest font-semibold font-sans" for="prenom">
+                Prénom *
+              </label>
+              <input
+                id="prenom"
+                name="PRENOM"
+                type="text"
+                required
+                placeholder="Antoine"
+                class="border border-cobalt/20 focus:border-apricot rounded px-4 py-3 text-sm text-cobalt bg-surface outline-none transition-colors duration-300 placeholder:text-cobalt/30"
+              />
+            </div>
+            <div class="flex flex-col gap-2">
+              <label class="text-cobalt text-xs uppercase tracking-widest font-semibold font-sans" for="nom">
+                Nom *
+              </label>
+              <input
+                id="nom"
+                name="NOM"
+                type="text"
+                required
+                placeholder="Dupont"
+                class="border border-cobalt/20 focus:border-apricot rounded px-4 py-3 text-sm text-cobalt bg-surface outline-none transition-colors duration-300 placeholder:text-cobalt/30"
+              />
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-2">
+            <label class="text-cobalt text-xs uppercase tracking-widest font-semibold font-sans" for="email">
+              Email *
+            </label>
+            <input
+              id="email"
+              name="EMAIL"
+              type="email"
+              required
+              placeholder="antoine@exemple.fr"
+              class="border border-cobalt/20 focus:border-apricot rounded px-4 py-3 text-sm text-cobalt bg-surface outline-none transition-colors duration-300 placeholder:text-cobalt/30"
+            />
+          </div>
+
+          <div class="flex flex-col gap-2">
+            <label class="text-cobalt text-xs uppercase tracking-widest font-semibold font-sans" for="sujet">
+              Sujet
+            </label>
+            <select
+              id="sujet"
+              name="SUJET"
+              class="border border-cobalt/20 focus:border-apricot rounded px-4 py-3 text-sm text-cobalt bg-surface outline-none transition-colors duration-300"
+            >
+              <option value="reservation">Réservation</option>
+              <option value="groupe">Groupe / Événement</option>
+              <option value="seminaire">Séminaire</option>
+              <option value="autre">Autre demande</option>
+            </select>
+          </div>
+
+          <div class="flex flex-col gap-2">
+            <label class="text-cobalt text-xs uppercase tracking-widest font-semibold font-sans" for="message">
+              Message *
+            </label>
+            <textarea
+              id="message"
+              name="MESSAGE"
+              rows="5"
+              required
+              placeholder="Votre message..."
+              class="border border-cobalt/20 focus:border-apricot rounded px-4 py-3 text-sm text-cobalt bg-surface outline-none transition-colors duration-300 resize-none placeholder:text-cobalt/30"
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn-primary w-fit">
+            Envoyer le message
+          </button>
+        </form>
+
+      </div>
+
+    </div>
+  </section>
+
+</Base>

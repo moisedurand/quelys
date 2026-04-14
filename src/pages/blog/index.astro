@@ -1,0 +1,106 @@
+---
+import Base from '../../layouts/Base.astro';
+
+// Articles statiques — à remplacer par Astro.glob() ou une collection
+// quand les fichiers .astro de blog seront créés.
+const articles = [
+  {
+    slug:       'accord-mets-vins-bistronomique',
+    title:      'L\'accord mets & vins selon Anthony Lusson',
+    description:'Comment choisir le bon vin pour sublimer une cuisine bistronomique ? Notre chef partage sa philosophie.',
+    date:       '2025-03-15',
+    categorie:  'Cave raisonnée',
+    image:      '/images/blog/accord-mets-vins.jpg',
+    temps:      '4 min',
+  },
+  {
+    slug:       'marche-talensac-nantes',
+    title:      'Retour de marché : les trésors du Talensac',
+    description:'Chaque mardi, Anthony fait les marchés. Découvrez ses coups de cœur du printemps et les producteurs qui font la carte.',
+    date:       '2025-03-01',
+    categorie:  'Coulisses',
+    image:      '/images/blog/marche-talensac.jpg',
+    temps:      '3 min',
+  },
+  {
+    slug:       'cuisine-bistronomique-nantes',
+    title:      'Qu\'est-ce que la cuisine bistronomique ?',
+    description:'Entre le bistrot populaire et la gastronomie étoilée, la bistronomie trace sa voie. Explications à Nantes.',
+    date:       '2025-02-14',
+    categorie:  'À table',
+    image:      '/images/blog/bistronomie.jpg',
+    temps:      '5 min',
+  },
+];
+
+const formatDate = (d: string) =>
+  new Date(d).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
+---
+
+<Base
+  title="Actualités & Blog — Quélys, Restaurant Bistronomique Nantes"
+  description="Le blog de Quélys : coulisses de cuisine, accords mets & vins, retours de marché et actualités du restaurant bistronomique à Nantes."
+>
+
+  <!-- Header -->
+  <div class="pt-40 pb-20 bg-cobalt noise-overlay">
+    <div class="max-w-[80rem] mx-auto px-8">
+      <span class="label-tag mb-4 block">Actualités</span>
+      <h1 class="text-white text-[3.5rem] md:text-[5rem] leading-[1.0] font-script">
+        Le carnet de Quélys
+      </h1>
+    </div>
+  </div>
+
+  <!-- Articles -->
+  <section class="py-24 bg-white">
+    <div class="max-w-[80rem] mx-auto px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+
+        {articles.map(({ slug, title, description, date, categorie, image, temps }) => (
+          <article class="group flex flex-col bg-surface rounded overflow-hidden shadow-[0_4px_24px_rgba(31,52,100,0.06)] hover:shadow-[0_8px_40px_rgba(31,52,100,0.12)] transition-shadow duration-300">
+
+            <!-- Image -->
+            <div class="aspect-[16/9] overflow-hidden bg-sky/20">
+              <img
+                src={image}
+                alt={title}
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                loading="lazy"
+              />
+            </div>
+
+            <!-- Contenu -->
+            <div class="p-7 flex flex-col flex-grow">
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-apricot text-[11px] uppercase tracking-widest font-semibold font-sans">{categorie}</span>
+                <span class="text-cobalt/40 text-xs font-sans">{temps} de lecture</span>
+              </div>
+
+              <h2 class="text-cobalt text-xl font-script leading-tight mb-3 group-hover:text-apricot transition-colors duration-300">
+                {title}
+              </h2>
+
+              <p class="text-cobalt/60 text-sm font-light leading-relaxed mb-6 flex-grow">
+                {description}
+              </p>
+
+              <div class="flex items-center justify-between mt-auto pt-4 border-t border-cobalt/5">
+                <time class="text-cobalt/40 text-xs font-sans">{formatDate(date)}</time>
+                <a
+                  href={`/blog/${slug}`}
+                  class="text-apricot text-xs font-semibold font-sans hover:underline underline-offset-2"
+                >
+                  Lire l'article →
+                </a>
+              </div>
+            </div>
+
+          </article>
+        ))}
+
+      </div>
+    </div>
+  </section>
+
+</Base>

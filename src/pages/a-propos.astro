@@ -1,0 +1,84 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base
+  title="À propos — Quélys, Cuisine Bistronomique Nantes"
+  description="Découvrez l'histoire de Quélys et de son chef Anthony Lusson. Une cuisine bistronomique engagée, des produits locaux, une vision du bien manger à Nantes."
+>
+
+  <!-- Page header -->
+  <div class="pt-40 pb-20 bg-cobalt noise-overlay">
+    <div class="max-w-[80rem] mx-auto px-8">
+      <span class="label-tag mb-4 block">Notre histoire</span>
+      <h1 class="text-white text-[3.5rem] md:text-[5rem] leading-[1.0] font-script">
+        L'âme de Quélys
+      </h1>
+    </div>
+  </div>
+
+  <!-- Contenu -->
+  <section class="py-32 bg-white">
+    <div class="max-w-[80rem] mx-auto px-8 grid grid-cols-1 md:grid-cols-2 gap-20 items-start">
+
+      <div>
+        <img
+          src="/images/chef-portrait.jpg"
+          alt="Chef Anthony Lusson"
+          class="w-full aspect-[3/4] object-cover rounded shadow-[0_20px_60px_rgba(31,52,100,0.15)]"
+          loading="lazy"
+        />
+      </div>
+
+      <div class="flex flex-col gap-6 pt-4">
+        <h2 class="text-cobalt text-[2.5rem] font-script leading-tight">
+          Anthony Lusson, chef & fondateur
+        </h2>
+        <p class="text-cobalt/70 text-base font-light leading-relaxed">
+          Après 14 ans de parcours entre grandes maisons et cuisines du monde, Anthony Lusson
+          pose ses couteaux boulevard de la Prairie au Duc pour ouvrir Quélys — un restaurant
+          qui lui ressemble : précis, sincère, ancré dans son territoire.
+        </p>
+        <p class="text-cobalt/70 text-base font-light leading-relaxed">
+          Ici, pas de congélateur. Chaque matin, le chef fait ses marchés. La carte change
+          avec les saisons, les coups de cœur, les belles rencontres avec des producteurs locaux.
+          Bistronomique, ça veut dire : la générosité du bistrot avec l'exigence de la gastronomie.
+        </p>
+        <p class="text-cobalt/70 text-base font-light leading-relaxed">
+          Quélys, c'est aussi un lieu. Une salle au design soigné, une adresse où l'on revient,
+          où l'on se retrouve. Prairie au Duc, en plein cœur de la Nantes qui bouge.
+        </p>
+
+        <div class="flex gap-4 mt-4">
+          <a href="/la-carte" class="btn-primary">Voir la carte</a>
+          <a href="/contact" class="btn-outline">Nous contacter</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Valeurs -->
+  <section class="py-24 bg-surface">
+    <div class="max-w-[80rem] mx-auto px-8">
+      <div class="text-center mb-16">
+        <span class="label-tag mb-4 block">Ce qui nous guide</span>
+        <h2 class="text-cobalt text-[3rem] font-script">Nos engagements</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {[
+          { icon: 'solar:leaf-linear',       title: 'Produits locaux',    desc: 'Approvisionnement auprès de producteurs de Loire-Atlantique, marché quotidien.' },
+          { icon: 'solar:recycle-linear',    title: 'Anti-gaspillage',    desc: 'Carte courte volontairement, zéro déchet en cuisine, respect des saisons.' },
+          { icon: 'solar:heart-linear',      title: 'Convivialité',       desc: 'Un accueil chaleureux, une salle où l\'on se sent bien, des équipes passionnées.' },
+        ].map(({ icon, title, desc }) => (
+          <div class="bg-white p-8 rounded shadow-[0_4px_20px_rgba(31,52,100,0.06)] border-t-2 border-apricot/40">
+            <iconify-icon icon={icon} width="28" class="text-apricot mb-4" stroke-width="1.5"></iconify-icon>
+            <h3 class="text-cobalt font-semibold text-lg mb-3 font-sans">{title}</h3>
+            <p class="text-cobalt/60 text-sm font-light leading-relaxed">{desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+</Base>

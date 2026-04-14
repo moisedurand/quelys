@@ -1,0 +1,114 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base
+  title="La Carte — Quélys, Restaurant Bistronomique Nantes"
+  description="Découvrez la carte de Quélys : menus de saison, entrées, plats, desserts et carte des vins. Cuisine bistronomique à Nantes, Prairie au Duc."
+>
+
+  <!-- Header -->
+  <div class="pt-40 pb-20 bg-cobalt noise-overlay">
+    <div class="max-w-[80rem] mx-auto px-8">
+      <span class="label-tag mb-4 block">Saison printemps 2025</span>
+      <h1 class="text-white text-[3.5rem] md:text-[5rem] leading-[1.0] font-script">
+        La carte du moment
+      </h1>
+      <p class="text-white/60 text-base font-light mt-4 max-w-xl">
+        Renouvelée selon les arrivages. Demandez à votre serveur les suggestions du jour.
+      </p>
+    </div>
+  </div>
+
+  <!-- Formules -->
+  <section class="py-24 bg-white">
+    <div class="max-w-[80rem] mx-auto px-8">
+
+      <div class="text-center mb-16">
+        <span class="label-tag mb-4 block">Nos formules</span>
+        <h2 class="text-cobalt text-[3rem] font-script">Choisissez votre expérience</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
+        {[
+          {
+            tag: 'Formule Déjeuner', name: 'Menu Marché', price: '25 €',
+            desc: 'Entrée + plat ou plat + dessert',
+            items: ['Œuf parfait, crème de champignons', 'Pêche du jour, beurre blanc', 'Ganache montée chocolat'],
+            note: 'Midi uniquement · Mar–Ven',
+          },
+          {
+            tag: 'Menu Signature', name: 'Menu Découverte', price: '45 €',
+            desc: 'Entrée, plat, dessert au choix',
+            items: ['Asperges rôties, jus de viande', 'Filet de canette, carottes fanes', 'Tartelette agrumes, thym'],
+            note: 'Midi & Soir · Mar–Sam',
+          },
+          {
+            tag: 'Menu Dégustation', name: 'Gastronomique', price: '68 €',
+            desc: 'Menu en 5 temps, à l\'aveugle',
+            items: ['Amuse-bouches du moment', '2 entrées / 1 plat / 1 pré-dessert', 'Dessert signature & mignardises'],
+            note: 'Accord mets & vins : + 35 €',
+          },
+        ].map(({ tag, name, price, desc, items, note }) => (
+          <div class="bg-surface rounded overflow-hidden flex flex-col group shadow-[0_8px_40px_rgba(31,52,100,0.08)] transition-transform duration-300 hover:-translate-y-1">
+            <div class="h-20 bg-sky noise-overlay"></div>
+            <div class="p-8 flex flex-col flex-grow items-center text-center">
+              <span class="text-cobalt text-[11px] uppercase tracking-widest mb-3 font-semibold font-sans">{tag}</span>
+              <h3 class="text-cobalt text-[2.5rem] leading-none mb-4 font-script">{name}</h3>
+              <div class="text-apricot text-3xl font-semibold mb-2 font-sans">{price}</div>
+              <p class="text-cobalt/60 text-sm font-light mb-6">{desc}</p>
+              <div class="w-12 h-px bg-cobalt/10 mb-6"></div>
+              <div class="flex flex-col gap-2 mb-8">
+                {items.map(item => <span class="text-cobalt/80 text-sm italic font-light">{item}</span>)}
+              </div>
+              <div class="mt-auto text-cobalt/50 text-xs font-sans">{note}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Carte à la pièce -->
+      <div class="border-t border-cobalt/10 pt-16">
+        <div class="text-center mb-12">
+          <span class="label-tag mb-4 block">À la carte</span>
+          <h2 class="text-cobalt text-[2.5rem] font-script">Suggestions du marché</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-8 max-w-4xl mx-auto">
+          <div>
+            <h3 class="text-cobalt text-xs uppercase tracking-widest mb-6 font-semibold font-sans pb-2 border-b border-cobalt/10">Entrées</h3>
+            {[
+              ['Ceviche de daurade, lait de coco', '18 €'],
+              ['Foie gras de canard, brioche maison', '22 €'],
+              ['Velouté de topinambours, truffe d\'été', '16 €'],
+              ['Tataki de thon rouge, ponzu', '20 €'],
+            ].map(([dish, price]) => (
+              <div class="flex justify-between items-baseline py-3 border-b border-cobalt/5 last:border-0">
+                <span class="text-cobalt/80 text-sm italic font-light">{dish}</span>
+                <span class="text-apricot text-sm font-semibold font-sans ml-4 shrink-0">{price}</span>
+              </div>
+            ))}
+          </div>
+          <div>
+            <h3 class="text-cobalt text-xs uppercase tracking-widest mb-6 font-semibold font-sans pb-2 border-b border-cobalt/10">Plats</h3>
+            {[
+              ['Sole meunière, citron confit', '34 €'],
+              ['Carré d\'agneau, jus réduit', '38 €'],
+              ['Risotto de langoustines', '32 €'],
+              ['Légumes de saison, œuf mollet', '26 €'],
+            ].map(([dish, price]) => (
+              <div class="flex justify-between items-baseline py-3 border-b border-cobalt/5 last:border-0">
+                <span class="text-cobalt/80 text-sm italic font-light">{dish}</span>
+                <span class="text-apricot text-sm font-semibold font-sans ml-4 shrink-0">{price}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+        <p class="text-center text-cobalt/40 text-xs mt-8 font-sans">
+          Carte susceptible d'évoluer selon les arrivages. Prix nets, service inclus.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+</Base>
