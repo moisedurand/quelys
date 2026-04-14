@@ -47,6 +47,26 @@ body {
   position: relative;
   z-index: 1;
 }
+/* Variante paprika (sur fond clair) */
+.noise-paprika {
+  position: relative;
+}
+.noise-paprika::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("/images/sillage-paprika.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  opacity: 1;
+  z-index: 0;
+}
+.noise-paprika > * {
+  position: relative;
+  z-index: 1;
+}
 
 /* ─── Composants obligatoires ───────────────────────────────── */
 

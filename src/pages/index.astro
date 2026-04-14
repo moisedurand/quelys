@@ -222,7 +222,7 @@ import Base from '../layouts/Base.astro';
         ].map(({ tag, name, price, desc, items, note }) => (
           <div class="bg-white rounded overflow-hidden flex flex-col group shadow-[0_8px_40px_rgba(31,52,100,0.08)] transition-transform duration-300 hover:-translate-y-2">
             <!-- Bandeau sky -->
-            <div class="h-20 bg-sky noise-overlay"></div>
+            <div class="h-20 bg-sky noise-paprika"></div>
             <!-- Corps -->
             <div class="p-8 flex flex-col flex-grow items-center text-center">
               <span class="text-cobalt text-[11px] uppercase tracking-widest mb-3 font-semibold font-sans">{tag}</span>
@@ -293,7 +293,7 @@ import Base from '../layouts/Base.astro';
         <div class="flex flex-col gap-4 mb-12">
           {[
             { icon: 'solar:plate-linear',     label: `Déjeuners d'affaires`      },
-            { icon: 'solar:glass-water-linear',label: 'Dîners privatifs'           },
+            { icon: 'solar:wineglass-linear',  label: 'Dîners privatifs'           },
             { icon: 'solar:case-linear',       label: 'Séminaires & teambuilding'  },
             { icon: 'solar:confetti-linear',   label: 'Anniversaires & célébrations'},
           ].map(({ icon, label }) => (
