@@ -281,7 +281,7 @@ import Base from '../layouts/Base.astro';
     <div class="w-full md:w-1/2 p-10 md:p-20 relative" style="background-color:#B25C45">
       <div class="relative z-10 max-w-lg">
 
-        <span class="label-tag mb-4 block">Groupes & Événements</span>
+        <span class="block text-white text-xs uppercase tracking-[0.25rem] font-medium font-sans mb-4">Groupes & Événements</span>
 
         <h2 class="text-white text-[3rem] md:text-[4rem] leading-[1.1] tracking-tight mb-6 font-script">
           Votre événement, notre scène
@@ -300,7 +300,7 @@ import Base from '../layouts/Base.astro';
             { icon: 'solar:confetti-linear',   label: 'Anniversaires & célébrations'},
           ].map(({ icon, label }) => (
             <div class="flex items-center gap-4">
-              <iconify-icon icon={icon} width="24" stroke-width="1.5" style="color:#DD9C7A"></iconify-icon>
+              <iconify-icon icon={icon} width="24" stroke-width="1.5" style="color:#ffffff"></iconify-icon>
               <span class="text-white text-base font-sans">{label}</span>
             </div>
           ))}
