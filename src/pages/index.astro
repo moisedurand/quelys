@@ -12,37 +12,13 @@ import Base from '../layouts/Base.astro';
   ══════════════════════════════════════════ -->
   <header class="relative h-screen w-full overflow-hidden bg-cobalt">
 
-    <!-- Mosaïque photos -->
-    <div class="absolute inset-0 w-full h-full flex">
-      <!-- Gauche : salle -->
-      <div class="w-[34%] h-full">
-        <img
-          src="/images/hero-salle.webp"
-          alt="Salle du restaurant Quélys"
-          class="w-full h-full object-cover"
-          loading="eager"
-        />
-      </div>
-      <!-- Centre : plat (décalé vers le haut) -->
-      <div class="w-[34%] absolute left-[33%] z-10 shadow-[0_0_3rem_rgba(0,0,0,0.5)]"
-           style="height: calc(100% + 3.75rem); top: -1.875rem;">
-        <img
-          src="/images/hero-plat.webp"
-          alt="Plat dressé par le chef"
-          class="w-full h-full object-cover"
-          loading="eager"
-        />
-      </div>
-      <!-- Droite : ambiance -->
-      <div class="w-[34%] h-full absolute right-0 top-0">
-        <img
-          src="/images/hero-ambiance.webp"
-          alt="Ambiance conviviale au restaurant"
-          class="w-full h-full object-cover"
-          loading="eager"
-        />
-      </div>
-    </div>
+    <!-- Image de fond -->
+    <img
+      src="/images/hero-salle.webp"
+      alt="Salle du restaurant Quélys"
+      class="absolute inset-0 w-full h-full object-cover"
+      loading="eager"
+    />
 
     <!-- Dégradé cobalt (vertical) -->
     <div class="absolute inset-0 z-20 bg-gradient-to-b from-cobalt/80 via-cobalt/40 to-transparent"></div>
@@ -50,8 +26,9 @@ import Base from '../layouts/Base.astro';
     <div class="absolute inset-0 z-20 bg-gradient-to-r from-cobalt/85 via-cobalt/30 to-transparent md:via-cobalt/20"></div>
 
     <!-- Texte hero -->
-    <div class="absolute z-30 top-1/2 -translate-y-[45%] left-[5vw] md:left-20 flex flex-col items-start w-full max-w-xl">
-
+    <div class="absolute z-30 inset-x-0 top-1/2 -translate-y-[45%]">
+     <div class="max-w-[80rem] mx-auto px-8 flex flex-col items-start w-full">
+      <div class="max-w-xl flex flex-col items-start">
       <span class="label-tag mb-6 animate-fade-up-1">
         Nantes · Cuisine Bistronomique
       </span>
@@ -78,6 +55,8 @@ import Base from '../layouts/Base.astro';
           Découvrir la carte
         </a>
       </div>
+      </div>
+     </div>
     </div>
 
     <!-- Watermark QL -->
